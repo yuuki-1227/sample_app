@@ -14,6 +14,15 @@ class TodolistsController < ApplicationController
     redirect_to '/top'
   end
 
+  def index
+    @lists = List.all
+  end
+
+  def show
+    @list = List.find(params[:id])
+
+  end
+
   private
   # ストロングパラメータ
   def list_params
